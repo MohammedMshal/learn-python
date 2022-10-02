@@ -16,7 +16,6 @@ print(var1[-1])
 print(name[:8:])
 #طباعة عدد الخانات
 print(len(name))
-print(name.index)
 #دمج النصوص
 num = 33.6546545
 name = 'Mohammed Mshal'
