@@ -6,8 +6,9 @@
 #print('my name is {1} and {0}'.format(name,'test'))
 ############################################################
 num = 33.6546545
+name = 'Mohammed Mshal'
 #one
-print('number is {}'.format(num))
+print('number is ' + name)
 #two
 print('the number is {:10.2f}'.format(num))
 #three
