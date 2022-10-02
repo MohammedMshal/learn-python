@@ -1,28 +1,37 @@
-# print string with var
-# one
-#name = 'Mohammed Mshal'
-#print('my name is ' + name)
-#print('my name is {n} and {t}'.format( n=name,t='test'))
-#print('my name is {1} and {0}'.format(name,'test'))
-############################################################
-var1 = 'hello'
-name = 'hello my name is Mohammed Mhsal'
-#طباعة او الحصول على حرف معين من المتغير من خلال الاندكس
-print(var1[1])
-#الحصول على اخر حرف فى الكلمة بطريقة عكسية
-print(var1[-1])
-#الحصول على مجموعة معينة من المتغير
-#start:stop:step
-print(name[:8:])
-#طباعة عدد الخانات
-print(len(name))
-#دمج النصوص
-num = 33.6546545
-name = 'Mohammed Mshal'
-#one
-print('number is ' + name)
-#two
-print('the number is {:10.2f}'.format(num))
-#three
-print(f'the number is {num:10.3f}')
+from operator import ne
+
+
+listName = [1, 'two', 3]
+listNum2 = [4, 'five, 6']
+#يمكن دمج متفيرين من نوع ليست 
+newNumList = listName + listNum2
+print(newNumList)
+#يمكن الحصول على او طباعة جزء من الليست
+print(listName[:2:])
+#طريقة إضافة عنصر الى الليست
+newNumList.append('Siven')
+print(newNumList)
+# إضافة عنصر معين الى الليست من خلال الانديكس
+newNumList.insert(0,'Zero')
+print(newNumList)
+#حذغ عنصر معين من الليست من خلال اسم العنصر
+newNumList.remove('Siven')
+#حذغ عنصر معين من الليست والحصول عليه داخل متغير
+resultList = newNumList.pop(2)
+print(resultList)
+#حذف عنصر معين من الليست من خلال الانديكس
+del newNumList[0]
+print(newNumList)
+#حذف الليست بالمتفير 😂
+#del newNumList
+#حذف العناصر التى بداخل الليست بالكامل
+newNumList.clear()
+print(newNumList)
+num = [3,6,1,5,2]
+#ترتيب العناصر التى جاخل الليست من الاصغر الى الاكبر
+num.sort()
+print(num)
+#عكس عناصر الليست
+num.reverse()
+print(num)
 
