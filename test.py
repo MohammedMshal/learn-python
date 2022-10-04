@@ -1,81 +1,37 @@
-#اللوب مع المتغيرات
 
-name ='Mohammed Mshal'
-for names in name:
-    print(names)
-
-#اللوب مع الليست
-nameList = ['Mohammed','Mahmoud','Ahmed','Mshal']
-for nameLists in nameList:
-    print(nameLists)
-
-#اللوب مع الدكشنرى
-nameDic = {
-    'name':'Mohammed Mahmoud Ahmed Mshal',
-    'age':22,
-    'barthDay':'9/9/1999'
-}
-
-for nameDics in nameDic.values():
-    print(nameDics)
-
-#for (var) in (List-Value-Dectionaries,other...)
-#for (var) in rang(start,end,step)
-
-#تكرار الامر
-for x in range(5):
-    print('test print range method')
-    #لإضافة امر بعد إنتهاء اللوب من تنفيذ الكود الذى بالأعلى
-else :
-    print('end for loop')
-
-#عندما يتحقق الشرط سوف يوقف اللوب
-numList = [1,2,3,4,5]
-for num in numList:
-   if num > 3:
-    break
-   print(num)
-
-
-# يوقف اللوب بإعادة اللوب للعمل من البداية
-numList = [1,2,3,4,5]
-for num in numList:
-   if num > 3:
-    continue
-   print(num)
-
-#عندما نريد كتابة اللوب ولكن نريد تركه فارغاً وتأجيله لاحقا
-
-for num in numList:
-    pass
-
-#while loop
+#list comprehension
+#هى تقوم بوضع المتغير داخل ليست بطريقة مبسطه
 #var
-num = 1
-while num <= 10:
-    num +=1
-    if(num == 3):
-        continue
-    print( f'num = {num}')
+names = 'Mohammed Mshal'
+resultName = [name for name in names]
+print(f'nameString = {resultName}')
 
-#lists
-myList = [1,2,3,4,5]
-myList2 = []
-index = 0
-while index < len(myList):
-    print(myList[index])
-    index += 1
+#numbers(int)
 
-print('========================================================')
-while myList:
-    #عندما نريد حفظ العناصر من بداية  الليست نضع بين الأقواس (0)
-    item = myList.pop(0)
-    print(item)
+resultNum = [num for num in range(10)]
+print(f'numList = {resultNum}')
 
-print('============================================')
-num2 = 1
-while num2 <= 20:
-    if(num2 == 10):
-        break
-    num2 += 1
-    print(num2)
+#طباعة ارقام زوجية وإستخدام الدالة الشرطية داخل الليست
+
+resultNum2 = [num for num in range(20) if num%2 == 0]
+print(f'reslutNumTwo: {resultNum2}')
+
+#استخدام الدالة الشرطية كاملة داخل الليست
+
+resultNum3 = ['Even' if num%2 ==0 else 'ODD' for num in range(10)]
+print(f'reslutNumThree: {resultNum3}')
+
+#طرب عناصر الليست الأولى فى الثانية او عملية اخرى بطريقة مختصرة
+
+myList1 = [1,2,3,]
+myList2 = [100,200,300,]
+reslutListNum = []
+for x in myList1:
+    for x2 in myList2:
+        reslutListNum.append (x * x2)
+
+print (f'reslutListNum{reslutListNum}')
+
+#الطريقة
+reslutListNum2 = [x * y for x in myList1 for y in myList2]
+print(f'reslutListNum: {reslutListNum}')
