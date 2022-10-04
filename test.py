@@ -20,11 +20,29 @@ for line in myFile:
 
 print( f'my list is {myLits}')
 myFile.close()
+#للقراءة على الملف وإغلاقة تلقائياً
+#وضع الريت يتم كتابة النص مع مسح القديم وانشاء الملف ان لم يكن موجود ولا يسمح بالقراءة
+with open('test.txt', 'w') as write1:
+    write1.write('this is test write my file w mode')
+#فى هذا الوضع يتم الكتابة على الملف بدون حذف الاسطر القديمة 
+#وإذا لم يكن الملف موجود فسينم انشاءه تلقائيا
+with open('test.txt' , 'a') as write2:
+    write2.write('\nthis is write mode 2')
 
-with open('test.txt') as myFile2:
-    data = myFile2.read()
+#تسمح لنا بكتابة على الملف ولكن ليس بنفس الإسم وإن كان موجود سيحدث خطأ
+with open('test.txt','x') as xMode:
+    xMode.write('this is x mode rite')
 
-print(f'my file 2 is \n {data}')
+#تسمح لنا بالقراءة والكتابة على الملف فى نفس الوقت ولكن اذا لم يكن الملف موجود سيجدث خطأ
+#يمسح المحتوى القديم ويضيف الجديد
+with open('test', 'r+') as rPlusMode:
+    rPlusMode.write('this is x mode rite')
+    rPlusMode.seek(0)
+    rPlusMode.read()
+#rPlusMode عكس
+#يمسح الحتوى القديم ويضيف جديد
+with open('test.txt','w+') as wPlus:
+
 
 
 

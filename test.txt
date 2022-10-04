@@ -1,3 +1,2 @@
-this is frist line
-this is second line
-this is thrid line
+this is test write my file w mode
+this is write mode 2
