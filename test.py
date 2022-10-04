@@ -1,21 +1,36 @@
-#إختبار طباعة الكلمة التى أولها حرف الأس
-st1 = 'print only the words that starts with s in this sentence like Sam'
-for word in st1.split():
-    if(word[0].lower() == "s"):
-        print(word)
-#طباعة الارقام الزوجية بإستخدام رانج
-print(list(range(0,11,2)))
-#طباعة الأرقام من واحد إلى خمسين التى تقبل القسمة على ثلاثة
-reslutNum = [num for num in range(51) if num % 3 == 0]
-print(reslutNum)
-#طباعة الكلمات التى عدد أحرفها زوجية
-st2 = 'print every word in this sentence that has an even number of letters'
-for word in st2.split():
-    if(len(word) % 2 == 0):
-        print(f'{word} is Even')
+#طريقة تعريف الفنكشن
+def printName(name):
+    print(f'Hello {name}')
 
-#عمل ليست تحتوى على اول حرف من كلمة
-st3 = 'create a list of the first letters of every word in this sentence'
+printName('Mohammed Mshal')
 
-resultList = [word[0] for word in st3.split()]
-print(resultList)
+#إرجاع قيمة من الفنكشن
+def sum_num(num1,num2):
+    reslutNum =num1 + num2
+    return reslutNum
+
+print(sum_num(2,5))
+
+#مثال اخر التحقق من ان العدد زوجى
+def evenNumber(num):
+    resultNum = num % 2 == 0
+    print(resultNum)
+
+evenNumber(9)
+#مثال اخر للتحقق من ان الارقام يوجد بها رقم زوجى أو لا
+def isNumsEven(numList):
+    for num in numList:
+        if num % 2 == 0:
+            return True
+    return False
+
+print(isNumsEven([1,3,5,7,6]))
+
+#مثال اخر لوضع قيمة التحقق داخل متغير
+eventResult=[]
+def getEven(event):
+    for eventL in event:
+       if(eventL % 2 == 0):
+        eventResult.append(eventL)
+getEven([1,3,2,5,7,6,8,12,14,15,15])
+print(eventResult)
