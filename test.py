@@ -1,37 +1,21 @@
+#إختبار طباعة الكلمة التى أولها حرف الأس
+st1 = 'print only the words that starts with s in this sentence like Sam'
+for word in st1.split():
+    if(word[0].lower() == "s"):
+        print(word)
+#طباعة الارقام الزوجية بإستخدام رانج
+print(list(range(0,11,2)))
+#طباعة الأرقام من واحد إلى خمسين التى تقبل القسمة على ثلاثة
+reslutNum = [num for num in range(51) if num % 3 == 0]
+print(reslutNum)
+#طباعة الكلمات التى عدد أحرفها زوجية
+st2 = 'print every word in this sentence that has an even number of letters'
+for word in st2.split():
+    if(len(word) % 2 == 0):
+        print(f'{word} is Even')
 
-#list comprehension
-#هى تقوم بوضع المتغير داخل ليست بطريقة مبسطه
-#var
-names = 'Mohammed Mshal'
-resultName = [name for name in names]
-print(f'nameString = {resultName}')
+#عمل ليست تحتوى على اول حرف من كلمة
+st3 = 'create a list of the first letters of every word in this sentence'
 
-#numbers(int)
-
-resultNum = [num for num in range(10)]
-print(f'numList = {resultNum}')
-
-#طباعة ارقام زوجية وإستخدام الدالة الشرطية داخل الليست
-
-resultNum2 = [num for num in range(20) if num%2 == 0]
-print(f'reslutNumTwo: {resultNum2}')
-
-#استخدام الدالة الشرطية كاملة داخل الليست
-
-resultNum3 = ['Even' if num%2 ==0 else 'ODD' for num in range(10)]
-print(f'reslutNumThree: {resultNum3}')
-
-#طرب عناصر الليست الأولى فى الثانية او عملية اخرى بطريقة مختصرة
-
-myList1 = [1,2,3,]
-myList2 = [100,200,300,]
-reslutListNum = []
-for x in myList1:
-    for x2 in myList2:
-        reslutListNum.append (x * x2)
-
-print (f'reslutListNum{reslutListNum}')
-
-#الطريقة
-reslutListNum2 = [x * y for x in myList1 for y in myList2]
-print(f'reslutListNum: {reslutListNum}')
+resultList = [word[0] for word in st3.split()]
+print(resultList)
