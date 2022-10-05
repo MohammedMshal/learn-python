@@ -1,36 +1,24 @@
-#طريقة تعريف الفنكشن
-def printName(name):
-    print(f'Hello {name}')
+from random import shuffle
 
-printName('Mohammed Mshal')
+myList = [' ','O',' ']
 
-#إرجاع قيمة من الفنكشن
-def sum_num(num1,num2):
-    reslutNum =num1 + num2
-    return reslutNum
+def shuffle_list(alist):
+    shuffle(alist)
+    return alist
 
-print(sum_num(2,5))
 
-#مثال اخر التحقق من ان العدد زوجى
-def evenNumber(num):
-    resultNum = num % 2 == 0
-    print(resultNum)
+def player_guess():
+    guessed_index = ''
+    while guessed_index not in ['0','1','2']:
+        guessed_index = input('Please enter 0, 1, or 2: ')
+        return int(guessed_index)
 
-evenNumber(9)
-#مثال اخر للتحقق من ان الارقام يوجد بها رقم زوجى أو لا
-def isNumsEven(numList):
-    for num in numList:
-        if num % 2 == 0:
-            return True
-    return False
+def check_game(alist, index):
+    if alist[index] == 'O' :
+        print('You won')
+    else:
+        print('You lost')
 
-print(isNumsEven([1,3,5,7,6]))
+    print(alist)
 
-#مثال اخر لوضع قيمة التحقق داخل متغير
-eventResult=[]
-def getEven(event):
-    for eventL in event:
-       if(eventL % 2 == 0):
-        eventResult.append(eventL)
-getEven([1,3,2,5,7,6,8,12,14,15,15])
-print(eventResult)
+check_game(shuffle_list(myList),player_guess())
