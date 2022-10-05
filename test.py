@@ -1,24 +1,15 @@
-from random import shuffle
+#نستعملها عندما نريد وضع عدد لانهائى من البراميترات
+def sumNum(*args):
+    return(sum((args)))
 
-myList = [' ','O',' ']
+result_num = sumNum(3,6,2,7,8)
+print(result_num)
 
-def shuffle_list(alist):
-    shuffle(alist)
-    return alist
+#مثال عندما نريد وضع عدد لا نهائى من الراميترات على شكل {مفتاح  , قيمة}
+def myfunc(**kwargs):
+    print(kwargs)
+    for item in kwargs:
+        print(f'{item} is {kwargs[item]}')
 
+myfunc(name='mohammed',age=22,brath_day='sptamper')
 
-def player_guess():
-    guessed_index = ''
-    while guessed_index not in ['0','1','2']:
-        guessed_index = input('Please enter 0, 1, or 2: ')
-        return int(guessed_index)
-
-def check_game(alist, index):
-    if alist[index] == 'O' :
-        print('You won')
-    else:
-        print('You lost')
-
-    print(alist)
-
-check_game(shuffle_list(myList),player_guess())
