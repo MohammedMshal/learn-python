@@ -1,50 +1,37 @@
-from functools import reduce
-myList = [1,2,3,4,5,6,7,8,9,10]
-myList_name = ['Mohammed','ahmed','fady','sarah','shimaa','abdo']
-def squre(num):
-    return num ** 2
 
-result_num1 = []
 
-for num in myList:
-    result_num1.append(squre(num))
-print(result_num1)
+#كتابة فانكشن لحساب حجم الكرة
+def vol(r):
+    pi = 13.14
+    return 4/3 * pi * r**3
 
-result_num2 = []
-for item in map(squre,myList):
-    result_num2.append(item)
-print(result_num2)
+#كتابة فانكش تتحق من العدد المدخل ضمن الرينج أم لا
+def check_rang(num,low,high):
+    return num in range(low,high+1 )
 
-result_num3 = list(map(squre,myList))
-print(result_num3)
-#هنا قمنا بإستخدام الماب ولامبادا لاختصار الكود
-result_num4 = list(map(lambda num: num ** 2,myList))
-print(result_num4)
+#حساب عدد الاحرف الكابتل والسمول
+st = 'Hello Mr. Faris, hope you are good at this fine Friday.'
+upper = 0
+lower = 0
+all_char = 0
+for char in st:
+    all_char += 1
+    if char.isupper():
+        upper += 1
+    elif char.islower():
+        lower += 1
 
-def check_even(num):
-    return num % 2 == 0
+#فلترة الليست من الأرقام المكررة وإرجاعها كليست
 
-for item in myList:
-    print(check_even(item))
+list_num = [1,1,1,1,2,2,2,3,3,3,3]
+def uniqe_list(alist):
+    return list(set(alist))
 
-#سنقوم بإستخدام الفلتر
-#المثال الأول سنقوم بفلترة الارقام الزوحية
-print(list(filter(lambda num: num % 2 == 0,myList)))
-#المثال الثانى سنقوم بفلترة الاسماء التى تحتوى على خمسة أحرف فقط
-print(list(filter(lambda name: len(name) <= 5, myList_name)))
-
-#reduce
-#هذه بالطريقة العادية
-total=0
-for num in myList:
-    total += num
-print(total)
-#هنا سنستخدم الريديوس
-print(reduce (lambda total,num:total +  num ,myList,0))
-#مثال أخر اولاً سنستخدم ا لطريقة العادية
-mul = 1
-for num in  myList:
-    mul *= num
-print(mul)
-#هنا سنستخدم الريديوس\
-print(reduce(lambda total,num:total * num,myList,1))
+#ضرب الأرقام التى بداخل الليست وطباعتها
+numlst = [2,3,5,-10]
+def mul_num(lst):
+    res_num = 1
+    for num in lst:
+        res_num *= num
+    return res_num
+print(mul_num(numlst))
